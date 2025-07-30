@@ -22,6 +22,14 @@
           //  d) public
           a) private
         #endregion
+        #region Q03
+          //  Can an interface contain fields in C#?
+          // a) Yes
+          // b) No
+          // c) Only if they are static
+          // d) Only if they are readonly
+          b) No
+        #endregion
 
     }
 }
