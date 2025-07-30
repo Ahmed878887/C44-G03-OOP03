@@ -1,4 +1,6 @@
-﻿namespace Demo
+﻿using System.Runtime.Intrinsics.X86;
+
+namespace Demo
 {
     internal class Program
     {
@@ -38,6 +40,15 @@
         // d) Only if the interfaces are in the same namespace
         b) Yes, interfaces can inherit from multiple interfaces
             #endregion
+        #region Q05
+        // Which keyword is used to implement an interface in a class in C#?
+        // a) inherit
+        // b) use
+        // c) extends
+        //  d) implements
+       d) implements
+        #endregion
+
     }
 }
 }
