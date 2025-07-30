@@ -56,6 +56,16 @@ namespace Demo
        // d) Only if the methods are private
        a) Yes
         #endregion
+        #region Q07
+       //In C#, can an interface have explicit access modifiers for its members?
+       // a) Yes, for all members
+       // b) No, all members are implicitly public
+       //c) Yes, but only for abstract members
+       // d) Only if the interface is sealed
+       b) No, all members are implicitly public
+        #endregion
+        #region Q08
+
 
 
     }
