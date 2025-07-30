@@ -48,6 +48,15 @@ namespace Demo
         //  d) implements
        d) implements
         #endregion
+        #region Q06
+       // Can an interface contain static methods in C#?
+       // a) Yes
+       // b) No
+       // c) Only if the interface is sealed
+       // d) Only if the methods are private
+       a) Yes
+        #endregion
+
 
     }
 }
