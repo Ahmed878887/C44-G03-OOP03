@@ -150,6 +150,52 @@ namespace Demo
             }
         }
         #endregion
+        #region  Q02
+        public interface IAuthenticationService
+        {
+            bool AuthenticateUser(string username, string password);
+            bool AuthorizeUser(string username, string role);
+        }
+
+        public class BasicAuthenticationService : IAuthenticationService
+        {
+            private Dictionary<string, string> _userCredentials = new()
+    {
+        { "admin", "admin123" },
+        { "user", "user123" }
+    };
+
+            private Dictionary<string, string> _userRoles = new()
+    {
+        { "admin", "Administrator" },
+        { "user", "User" }
+    };
+
+            public bool AuthenticateUser(string username, string password)
+            {
+                return _userCredentials.TryGetValue(username, out var storedPassword)
+                       && storedPassword == password;
+            }
+
+            public bool AuthorizeUser(string username, string role)
+            {
+                return _userRoles.TryGetValue(username, out var userRole)
+                       && userRole == role;
+            }
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                IAuthenticationService authService = new BasicAuthenticationService();
+                bool isAuthenticated = authService.AuthenticateUser("admin", "admin123");
+                bool isAuthorized = authService.AuthorizeUser("admin", "Administrator");
+
+                Console.WriteLine($"Authenticated: {isAuthenticated}, Authorized: {isAuthorized}");
+            }
+        }
+        #endregion
 
 
 
