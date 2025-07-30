@@ -13,7 +13,15 @@
             //d) To create instances of objects
 
             b) To define a blueprint for a class
-            #endregion
+        #endregion
+        #region Q02
+          // Which of the following is NOT a valid access modifier for interface members in C#?
+          //a) private
+          //b) protected
+          // c) internal
+          //  d) public
+          a) private
+        #endregion
 
     }
 }
