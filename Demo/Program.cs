@@ -89,11 +89,72 @@ namespace Demo
 
             c) By separating interface names with commas
             #endregion
+        #region Part 02 Q01
+        /*Define an interface named IShape with a property Area and a method DisplayShapeInfo. Create two interfaces,
+         * ICircle and IRectangle, that inherit from IShape. Implement these interfaces in classes Circle and Rectangle.
+         * Test your implementation by creating instances of both classes and displaying their shape information.
+         */
+        public interface IShape
+        {
+            double Area { get; }
+            void DisplayShapeInfo();
+        }
+
+        public interface ICircle : IShape
+        {
+            double Radius { get; set; }
+        }
+
+        public interface IRectangle : IShape
+        {
+            double Length { get; set; }
+            double Width { get; set; }
+        }
+
+        // Implement the classes
+        public class Circle : ICircle
+        {
+            public double Radius { get; set; }
+
+            public double Area => Math.PI * Radius * Radius;
+
+            public void DisplayShapeInfo()
+            {
+                Console.WriteLine($"Circle - Radius: {Radius}, Area: {Area}");
+            }
+        }
+
+        public class Rectangle : IRectangle
+        {
+            public double Length { get; set; }
+            public double Width { get; set; }
+
+            public double Area => Length * Width;
+
+            public void DisplayShapeInfo()
+            {
+                Console.WriteLine($"Rectangle - Length: {Length}, Width: {Width}, Area: {Area}");
+            }
+        }
+
+        
+        class Program
+        {
+            static void Main()
+            {
+                ICircle circle = new Circle { Radius = 5 };
+                circle.DisplayShapeInfo();
+
+                IRectangle rectangle = new Rectangle { Length = 4, Width = 6 };
+                rectangle.DisplayShapeInfo();
+            }
+        }
+        #endregion
 
 
 
 
 
-}
+    }
 }
 }
