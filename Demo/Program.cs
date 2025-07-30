@@ -196,6 +196,50 @@ namespace Demo
             }
         }
         #endregion
+        #region Q03
+        public interface INotificationService
+        {
+            void SendNotification(string recipient, string message);
+        }
+
+        public class EmailNotificationService : INotificationService
+        {
+            public void SendNotification(string recipient, string message)
+            {
+                Console.WriteLine($"Email sent to {recipient}: {message}");
+            }
+        }
+
+        public class SmsNotificationService : INotificationService
+        {
+            public void SendNotification(string recipient, string message)
+            {
+                Console.WriteLine($"SMS sent to {recipient}: {message}");
+            }
+        }
+
+        public class PushNotificationService : INotificationService
+        {
+            public void SendNotification(string recipient, string message)
+            {
+                Console.WriteLine($"Push notification sent to {recipient}: {message}");
+            }
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                INotificationService emailService = new EmailNotificationService();
+                INotificationService smsService = new SmsNotificationService();
+                INotificationService pushService = new PushNotificationService();
+
+                emailService.SendNotification("user@example.com", "Hello via Email!");
+                smsService.SendNotification("+123456789", "Hello via SMS!");
+                pushService.SendNotification("DeviceID123", "Hello via Push!");
+            }
+        }
+        #endregion
 
 
 
