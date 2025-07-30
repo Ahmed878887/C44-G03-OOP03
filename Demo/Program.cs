@@ -30,7 +30,14 @@
           // d) Only if they are readonly
           b) No
         #endregion
-
+        #region Q04
+        // In C#, can an interface inherit from another interface?
+        // a) No, interfaces cannot inherit from each other
+        // b) Yes, interfaces can inherit from multiple interfaces
+        //c) Yes, but only if they have the same methods
+        // d) Only if the interfaces are in the same namespace
+        b) Yes, interfaces can inherit from multiple interfaces
+            #endregion
     }
 }
 }
